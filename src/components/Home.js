@@ -2,35 +2,46 @@ import React from 'react'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import App from '../App';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import Link from '@mui/material/Link'
 
-
-
-
-
-
-
-const home = () => {
+const Home = () => {
   return (
     <div>
         <Box>
             <AppBar position = 'static'>
                 <Toolbar>
-                    <IconButton color='inherit'>
-                        <MenuIcon/>
-                    </IconButton>
+                    <Typography variant='h6' component='div' gutterButtom >
+                        OmololaTodoApp
+                    </Typography>
                 </Toolbar>
             </AppBar>
         </Box>
 
+        <Stack spacing={15} direction="row" sx={{marginTop:'20px', display:'flex', justifyContent:'center'} }>
+        <Link href='/' underline='none'>
+        <Button variant="contained" >
+          <Typography variant='BUTTON TEXT'>List of Tasks</Typography>
+        </Button>
+        </Link>
+
+        <Link href='/create' underline='none'>
+        <Button variant="contained" >
+          <Typography variant='BUTTON TEXT'> Add New Task</Typography>
+        </Button>
+        </Link>
+        
+         
+    </Stack>
+
 
     </div>
+
+
+
   )
 }
 
-export default home
+export default Home
